@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Etch-a-Sketch!
+        </title>
+        <link rel="stylesheet" href="etch-CSS.css">
+
+    </head>
+    <body>
+        <h1>
+            Etch-a-Sketch
+        </h1>
+        <h2>
+            Hover over the grid to start drawing!
+        </h2>
+
+        <div class= "button"> 
+            <div id= "clear">
+                <button id="clear">Clear</button>
+            </div>
+        </div>
+
+        <div id="container">
+
+        </div>
+
+
+        <script>
+            
+            let containerDiv= document.querySelector("#container")
+            let squareDiv= document.createElement('div');
+            squareDiv.setAttribute('class', 'square');
+            for (let i=0; i< 16; i++){
+                for (let j=0; j<16; j++){
+                    containerDiv.appendChild(squareDiv.cloneNode());
+                }
+            }
+
+            let blueSquare=undefined;
+            window.addEventListener("mouseover", function (e){
+                console.log(e);
+                let blueSquare= e.target;
+                blueSquare.classList.add('selected');
+            })
+
+
+            let clearButton= document.getElementById("clear");
+            clearButton.addEventListener("click", function(e){
+                while (containerDiv.firstChild){
+                    containerDiv.removeChild(containerDiv.lastChild);
+                }
+
+                let numSquares = prompt("How many squares do you want on the width of your sketch pad?", " ");
+                let newSquareDiv= document.createElement('div')
+                newSquareDiv.setAttribute('class', 'newSquare')
+                for (let i=0; i< numSquares-1; i++){
+                    for (let j=0; j< numSquares; j++){
+                        containerDiv.appendChild(newSquareDiv.cloneNode());
+                        let newLastChild= containerDiv.lastChild
+                        newLastChild.style.setProperty('--number-of-squares', numSquares);
+
+                    }
+                }
+
+            })
+        </script>
+    </body>
+
+
+</html>
+
