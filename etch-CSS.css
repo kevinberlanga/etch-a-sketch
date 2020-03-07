@@ -1,0 +1,67 @@
+#container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+}
+
+.square {
+    width: 31.25px;
+    height: 31.25px;
+    background-color: #cce0ff;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+.newSquare{
+    width: calc(500 / var(--number-of-squares) * 1px);
+    height: calc(500 / var(--number-of-squares) * 1px);
+    background-color: #cce0ff;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+.selected {
+    background-color: gray;
+}
+
+body {
+    background-color: white !important;
+}
+
+html {
+    background-color: white !important;
+}
+
+.button {
+    background-color: white !important;
+    align-items: center;
+    margin: 15px;
+}
+
+#clear {
+    background-color: white !important;
+    text-align: center;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 30pt;
+    background-color: white !important;
+    margin: 10px 10px 0px 10px;
+    text-align: center;
+}
+
+h2 {
+    font-family: helvetica;
+    font-size: 10pt;
+    background-color: white !important;
+    margin: 3px;
+    text-align: center;
+}
+
+#container{
+    background-color: white;
+}
